@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/SmartDetch/static/css/main.2842eb7f.chunk.css",
+    "main.js": "/SmartDetch/static/js/main.9352b87d.chunk.js",
+    "main.js.map": "/SmartDetch/static/js/main.9352b87d.chunk.js.map",
+    "runtime-main.js": "/SmartDetch/static/js/runtime-main.1ce905fb.js",
+    "runtime-main.js.map": "/SmartDetch/static/js/runtime-main.1ce905fb.js.map",
+    "static/css/2.6d7c7915.chunk.css": "/SmartDetch/static/css/2.6d7c7915.chunk.css",
+    "static/js/2.b7abbeba.chunk.js": "/SmartDetch/static/js/2.b7abbeba.chunk.js",
+    "static/js/2.b7abbeba.chunk.js.map": "/SmartDetch/static/js/2.b7abbeba.chunk.js.map",
+    "static/js/3.d6fc746a.chunk.js": "/SmartDetch/static/js/3.d6fc746a.chunk.js",
+    "static/js/3.d6fc746a.chunk.js.map": "/SmartDetch/static/js/3.d6fc746a.chunk.js.map",
+    "index.html": "/SmartDetch/index.html",
+    "static/css/2.6d7c7915.chunk.css.map": "/SmartDetch/static/css/2.6d7c7915.chunk.css.map",
+    "static/css/main.2842eb7f.chunk.css.map": "/SmartDetch/static/css/main.2842eb7f.chunk.css.map",
+    "static/js/2.b7abbeba.chunk.js.LICENSE.txt": "/SmartDetch/static/js/2.b7abbeba.chunk.js.LICENSE.txt",
+    "static/media/SmartbrainlogoReworked1.e2de2800.png": "/SmartDetch/static/media/SmartbrainlogoReworked1.e2de2800.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1ce905fb.js",
+    "static/css/2.6d7c7915.chunk.css",
+    "static/js/2.b7abbeba.chunk.js",
+    "static/css/main.2842eb7f.chunk.css",
+    "static/js/main.9352b87d.chunk.js"
+  ]
+}
