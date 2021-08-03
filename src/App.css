@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+p{
+  display: flex;
+  justify-content: center; 
+}
+
+button{
+  background-color: #363131;
+}

@@ -1,0 +1,11 @@
+.Tilt{
+    background :linear-gradient(to right, rgb(254, 242, 161), rgb(169, 200, 189));
+    border-radius: 15px;
+    box-shadow: 10px;
+}
+img{
+    border-radius: 2px;
+    box-shadow: 2px;
+    width: auto;
+    height: 200px;
+}
