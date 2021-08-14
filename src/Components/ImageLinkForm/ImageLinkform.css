@@ -1,5 +1,6 @@
 .form{
    width: 800px;
+   background-size: 40px 60px;
 }
 
 p{
@@ -8,5 +9,9 @@ p{
 }
 button{
     background-color: #363131;
+    cursor: pointer;
   }
   
+/* .bar {
+    background: linear-gradient(to right, rgb(108,182,228),rgb(202, 146, 23))
+} */

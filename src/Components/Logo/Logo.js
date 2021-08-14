@@ -8,7 +8,7 @@ const Logo = () => {
     return(
         <div>
          <Tilt className="Tilt" options={{ max : 35,speed: 300 }} style={{ height: 185, width: 200}} >
-          <div className="Tilt-inner"><img alt ='' src = {SmartbrainlogoReworked1}></img> </div>
+          <div className="Tilt-inner"><img className = 'images' alt ='' src = {SmartbrainlogoReworked1}></img> </div>
          </Tilt>
         </div>
     )
