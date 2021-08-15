@@ -40,7 +40,7 @@ const particlesOptions = {
 }
 
 const app = new Clarifai.App({
-  apiKey: 'f158f642d33c40f0bfc1612359c2fc6d'
+  apiKey: ''
  });
 
 
