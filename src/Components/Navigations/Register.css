@@ -1,0 +1,94 @@
+.backgroundcolor{
+    background-color: rgba(178, 90, 90,.9);  
+}
+
+.image{
+    border-radius: 36px;
+    width: 200px;
+    height: 185px;
+    background-color: rgb(41, 38, 38); 
+    margin-left: 0px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: #000000;
+    border-style: solid;
+    border-width:  2px;
+    
+}
+
+.sign_up{
+  border-radius: 36px;
+  border: #000000;
+  border-style: solid;
+  border-width:  2px;  
+  padding: 50px;
+  background-color: rgba(226, 182, 180, 0.6);
+  min-width:500px;
+  /* box-shadow: 8px 5px 5px rgb(34, 34, 34,.7); */
+}
+
+.input{
+    background-color: #CBCBCB;
+    border:none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width:100%; 
+    border-radius: 6px;   
+}
+.measure{
+    display: flex;
+    justify-content: center;
+}
+
+.Registerbutton{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    height: 50px;
+    border-radius: 8px;
+    background-color: rgb(112, 205, 110,.9);
+    margin-top: 35px;
+}
+
+.Signin_area{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+
+.siginbutton{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    height: 50%;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    border: #000000;
+    border-style: solid;
+    border-width:  2px;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 15px;
+    font-weight: 700;
+    font-family: Montserrat;
+}
+
+p{
+    color: rgb(245, 236, 236,.9);
+    padding-left: 10px;
+}
+
+footer{
+   position: fixed;
+   left: 0;
+   bottom: 3%;
+   width: 100%;
+   /* background-color: red; */
+   color: white;
+   text-align: center;
+   font-family: Montserrat;
+}

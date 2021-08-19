@@ -1,12 +1,15 @@
 import './App.css';
 import Particles from 'react-particles-js';
 import React, { Component } from 'react';
-import Navigaton from "./Components/Navigation/Navigation.js";
+import Signout from "./Components/Navigations/Signout.js";
 import Logo from "./Components/Logo/Logo.js";
 import ImageLinkForm from "./Components/ImageLinkForm/ImageLinkForm.js";
 import Rank from "./Components/Rank/Rank.js";
 import Clarifai from 'clarifai';
 import FaceRecognition from './Components/FaceRecognition/FaceRecognition.js';
+import SignIn from './Components/Navigations/SignIn';
+import Register from './Components/Navigations/Register.js';
+
 
 const particlesOptions = {
   size: {
@@ -40,7 +43,7 @@ const particlesOptions = {
 }
 
 const app = new Clarifai.App({
-  apiKey: ''
+  apiKey: 'f158f642d33c40f0bfc1612359c2fc6d'
  });
 
 
@@ -51,6 +54,7 @@ class App extends Component {
       input : '',
       imageUrl: '',
       box: {},
+      route:'SignIn'
     }
   }
   
@@ -68,7 +72,7 @@ class App extends Component {
 } 
 
 displayFaceBox = (box) => {
-  console.log(box);
+  // console.log(box);
   this.setState({box: box});
 }
 
@@ -87,19 +91,24 @@ displayFaceBox = (box) => {
  }
 
   render() {
-    return (
+    return ( 
       <div>
         <Particles className = 'particles'
           params={particlesOptions}
         />
-        <Navigaton />
-        <Logo />
-        <Rank />
-        <ImageLinkForm 
-        onInputchange = {this.onInputchange} 
-        onbuttonSubmit = {this.onbuttonSubmit} />
-        <FaceRecognition box = {this.state.box} imageUrl={this.state.imageUrl}  /> 
-      </div>
+        <Signout />
+        {this.state.route === 'SignIn'
+        ?<SignIn />
+        :<div>
+            <Logo />
+            <Rank />
+            <ImageLinkForm 
+            onInputchange = {this.onInputchange} 
+            onbuttonSubmit = {this.onbuttonSubmit} />
+            <FaceRecognition box = {this.state.box} imageUrl={this.state.imageUrl} /> 
+         </div>
+        }
+      </div> 
     );
   } 
 }

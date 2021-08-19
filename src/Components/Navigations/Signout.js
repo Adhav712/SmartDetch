@@ -1,8 +1,8 @@
 import React from 'react';
-import './Navigation.css';
+import './Signout.css';
 
 
-const Navigation = () => {
+const Signout = () => {
     return(
         <nav style = {{display:'flex',justifyContent: 'flex-end'}} >
             <p className='f3 link dim black underline pa3 pointer'> Sign Out</p>
@@ -11,4 +11,4 @@ const Navigation = () => {
 }
 
 
-export default Navigation; 
+export default Signout; 
