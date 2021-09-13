@@ -1,34 +1,58 @@
-.backgroundcolor{
+
+.backgroundcolorRegisterpage{
     background-color: rgba(178, 90, 90,.9);  
 }
 
-.image{
-    border-radius: 36px;
+.imageRegisterpage{
+    border-radius: 13px;
     width: 200px;
     height: 185px;
-    background-color: rgb(41, 38, 38); 
+    background-color: rgba(36, 33, 33, 0.9); 
     margin-left: 0px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
     border: #000000;
-    border-style: solid;
     border-width:  2px;
     
 }
 
 .sign_up{
-  border-radius: 36px;
+  border-radius: 52px;
   border: #000000;
-  border-style: solid;
   border-width:  2px;  
   padding: 50px;
+  padding-top: 30px;
   background-color: rgba(226, 182, 180, 0.6);
   min-width:500px;
-  /* box-shadow: 8px 5px 5px rgb(34, 34, 34,.7); */
+  font-family: montserrat;
+  padding-bottom: 20px;
 }
 
+.names{
+ display: flex;
+ justify-content: flex-start;
+}
+
+.inputfname{
+    background-color: #CBCBCB;
+    border:none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width:150px; 
+    margin-right: 20px;
+    border-radius: 6px;
+}
+.inputlname{
+    background-color: #CBCBCB;
+    border:none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width:150px; 
+    margin-left: 20px;
+    border-radius: 6px;
+}
 .input{
     background-color: #CBCBCB;
     border:none;
@@ -42,25 +66,25 @@
     justify-content: center;
 }
 
-.Registerbutton{
+.Registerbutton_Signup_page{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 35%;
-    height: 50px;
-    border-radius: 8px;
-    background-color: rgb(112, 205, 110,.9);
+    width: 30%;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
     margin-top: 35px;
+    border: none;
 }
 
 .Signin_area{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     padding-top: 20px;
 }
 
 .siginbutton{
-    display: inline-block;
+    /* display: inline-block;
     margin-left: auto;
     margin-right: auto;
     width: 25%;
@@ -74,11 +98,11 @@
     color: rgba(0, 0, 0, 0.8);
     font-size: 15px;
     font-weight: 700;
-    font-family: Montserrat;
+    font-family: Montserrat; */
 }
 
-p{
-    color: rgb(245, 236, 236,.9);
+.Signinline{
+    color: rgba(0, 0, 0, 0.9);
     padding-left: 10px;
 }
 

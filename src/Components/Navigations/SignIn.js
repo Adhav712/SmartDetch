@@ -1,10 +1,8 @@
 import React from 'react';
 import Particles from 'react-particles-js';
 import Smartbrainlogo from './Smartbrainlogo.png'
-import { Component } from 'react';
 import 'tachyons';
 import './SignIn.css'
-
 const particlesOptions = {
     size: {
       random: true,
@@ -36,10 +34,7 @@ const particlesOptions = {
       },
   }
 
-class SignIn extends Component{
-  
-
-  render(){
+const SignIn = ({onRouteChange}) => {
     return (
     <div>
      <Particles className = 'particles backgroundcolor'
@@ -47,8 +42,8 @@ class SignIn extends Component{
       />
      <div >
       <div className="center">
-       <form className="measure">
-        <div className="sign_up" >
+       <div className="measure">
+        <div className="sign_in" >
           <img className = 'image measure' alt ='' src = {Smartbrainlogo} />
           <div className="mt3">
             <input className='input' type='Email' placeholder="EMAIL" />
@@ -56,22 +51,43 @@ class SignIn extends Component{
           <div className="mv3">
             <input className='input' type='Password' placeholder="PASSWORD" />
           </div>
-            <input className="Signinbutton b ph3 pv2 input-reset ba b--black grow pointer f6 dib" type="submit" value="Sign in"/>
+            <input 
+              onClick = {() => {onRouteChange('home')}}
+               className="Signinbutton b ph3 pv2 input-reset ba b--black grow pointer f6 dib" 
+               type="submit" 
+               value="Sign in"
+             />
            <div className='Registerline_area'>
               <p>If you don't have a account click here to,</p>
-              <input className ="Registerbutton" type = 'button' value = 'Register'/>
+                <input 
+                 onClick = {() => {onRouteChange('Register')}} 
+                  className ="Registerbutton" 
+                  type = 'submit' 
+                  value = 'Register'
+                />
            </div>
+         </div>
         </div>
-       </form>
-      </div>
+       </div>
       <footer className='center'>©SmartDetch, Inc.2021. We respect your Time!</footer>
      </div>
     </div>  
     
     );
-  };
 
 }
+// class SignIn extends Component{
+//   // constructor(){
+//   //   super(){
+//   //     this.state = {
+
+//   //     }
+//   //   }
+//   // }
+
+
+
+// }
 
 
 

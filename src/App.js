@@ -54,7 +54,8 @@ class App extends Component {
       input : '',
       imageUrl: '',
       box: {},
-      route:'SignIn'
+      route:'SignIn',
+      isSignedIn : 'false'
     }
   }
   
@@ -90,16 +91,27 @@ displayFaceBox = (box) => {
    .catch(err => console.log(err))
  }
 
+
+ onRouteChange = (route) => {
+   if(route === 'Signout'){
+      this.setState({isSignedIn: 'false'})
+   }else if(route === 'home'){
+      this.setState({isSignedIn: 'true'})
+   }else if(route === 'Register'){
+     this.setState({isSignedIn: 0})
+   }
+   this.setState({route: route});
+ }
+
   render() {
     return ( 
       <div>
         <Particles className = 'particles'
           params={particlesOptions}
         />
-        <Signout />
-        {this.state.route === 'SignIn'
-        ?<SignIn />
-        :<div>
+        <Signout isSignedIn = {this.state.isSignedIn} onRouteChange = {this.onRouteChange}/>
+        {this.state.route === 'home'
+        ?<div>
             <Logo />
             <Rank />
             <ImageLinkForm 
@@ -107,6 +119,11 @@ displayFaceBox = (box) => {
             onbuttonSubmit = {this.onbuttonSubmit} />
             <FaceRecognition box = {this.state.box} imageUrl={this.state.imageUrl} /> 
          </div>
+        :(
+           this.state.route === 'SignIn'
+           ?<SignIn onRouteChange = {this.onRouteChange} />
+           :<Register onRouteChange = {this.onRouteChange} />
+          )
         }
       </div> 
     );

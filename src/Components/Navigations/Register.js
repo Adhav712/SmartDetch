@@ -1,8 +1,8 @@
 import React from 'react';
 import Particles from 'react-particles-js';
 import Smartbrainlogo from './Smartbrainlogo.png'
-import { Component } from 'react';
 import 'tachyons';
+import './Register.css'
 
 
 const particlesOptions = {
@@ -36,23 +36,20 @@ const particlesOptions = {
       },
   }
 
-class SignIn extends Component{
-  
-
-  render(){
+const Register= ({onRouteChange}) => {
     return (
     <div>
-     <Particles className = 'particles backgroundcolor'
+     <Particles className = 'particles backgroundcolorRegisterpage'
         params={particlesOptions}
       />
      <div >
       <div className="center">
        <form className="measure">
         <div className="sign_up" >
-          <img className = 'image measure' alt ='' src = {Smartbrainlogo} />
-          <div className="mt3">
-            <input className='input' type='name' placeholder="First name" />
-            <input className='input' type='name' placeholder="Last name" />
+          <img className = 'imageRegisterpage measure' alt ='' src = {Smartbrainlogo} />
+          <div className="mt3 names">
+            <input className='inputfname' type='name' placeholder="First name" />
+            <input className='inputlname' type='name' placeholder="Last name" />
           </div>
           <div className="mt3">
             <input className='input' type='Email' placeholder="Email ID"/>
@@ -60,10 +57,10 @@ class SignIn extends Component{
           <div className="mv3">
             <input className='input' type='Password' placeholder="Create a Password" />
           </div>
-            <input className="Registerbutton b ph3 pv2 input-reset ba b--black grow pointer f6 dib" type="submit" value="Register"/>
+            <input className="Registerbutton_Signup_page ph3 pv2 input-reset  grow pointer f6 dib" type="submit" value="Register"/>
            <div className='Signin_area'>
-              <p className ="signinbutton">Sign in</p> 
-              <p>If you already have account</p>   
+              <p className ="signinbutton pointer" onClick = {() => onRouteChange('SignIn')}>Sign in</p> 
+              <p className = 'Signinline'>If you already have account</p>   
            </div>
         </div>
        </form>
@@ -73,10 +70,16 @@ class SignIn extends Component{
     </div>  
     
     );
-  };
-
 }
+// class SignIn extends Component{
+  
+
+//   render(){
+    
+//   };
+
+// }
 
 
 
-export default SignIn;
+export default Register;
