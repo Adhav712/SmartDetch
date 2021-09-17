@@ -55,8 +55,30 @@ class App extends Component {
       imageUrl: '',
       box: {},
       route:'SignIn',
-      isSignedIn : 'false'
+      isSignedIn : 'false',
+      user:{
+        id: '',
+        firstName: '',
+        lastName: '',
+        email: '',
+        // password: 'adhavan07',
+        entries: 0,
+        joined: ''
+      }
     }
+  }
+  
+  loadUser= (data)=>{
+      console.log('Saving User Data',data)
+      this.setState({user: {
+        id: data.id,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        entries: data.entries,
+        joined: data.joined
+      }})
+      console.log('Saved User data', this.state.user)
   }
   
 
@@ -123,7 +145,7 @@ displayFaceBox = (box) => {
         :(
            this.state.route === 'SignIn'
            ?<SignIn onRouteChange = {this.onRouteChange} />
-           :<Register onRouteChange = {this.onRouteChange} />
+           :<Register loadUser = {this.loadUser} onRouteChange = {this.onRouteChange} />
           )
         }
       </div> 

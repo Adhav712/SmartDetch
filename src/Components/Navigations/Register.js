@@ -36,40 +36,92 @@ const particlesOptions = {
       },
   }
 
-const Register= ({onRouteChange}) => {
+
+class Register extends React.Component {
+  constructor(){
+    super()
+    this.state = {
+      Email: '',
+      Password: '',
+      FirstName: '',
+      LastName: ''
+    }
+  }
+
+  onFirstNameChange = (event) => {
+    this.setState({FirstName: event.target.value})
+  }
+
+  onLastNameChange = (event) => {
+    this.setState({LastName: event.target.value})
+  }
+
+  onEmailChange = (event) =>{
+    this.setState({Email: event.target.value})
+  }
+
+  onPasswordChange =(event) => {
+    this.setState({Password: event.target.value})
+  }
+
+  onSubmitRegister =() => {
+    fetch('http://localhost:3000/register',{
+      method: 'post',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        Email: this.state.Email,
+        Password:this.state.Password,
+        FirstName:this.state.FirstName,
+        LastName:this.state.LastName
+      })
+    })
+      .then(resp => resp.json())
+      .then(user => {
+        if(user){
+          console.log("Sending user data",user)
+          this.props.loadUser(user);
+          this.props.onRouteChange('SignIn');
+        }
+      })
+  }
+  render(){
     return (
-    <div>
-     <Particles className = 'particles backgroundcolorRegisterpage'
-        params={particlesOptions}
-      />
-     <div >
-      <div className="center">
-       <form className="measure">
-        <div className="sign_up" >
-          <img className = 'imageRegisterpage measure' alt ='' src = {Smartbrainlogo} />
-          <div className="mt3 names">
-            <input className='inputfname' type='name' placeholder="First name" />
-            <input className='inputlname' type='name' placeholder="Last name" />
+      <div>
+       <Particles className = 'particles backgroundcolorRegisterpage'
+          params={particlesOptions}
+        />
+       <div >
+        <div className="center">
+         <form className="measure">
+          <div className="sign_up" >
+            <img className = 'imageRegisterpage measure' alt ='' src = {Smartbrainlogo} />
+            <div className="mt3 names">
+              <input onChange = {this.onFirstNameChange} className='inputfname' type='name' placeholder="First name" />
+              <input onChange = {this.onLastNameChange} className='inputlname' type='name' placeholder="Last name" />
+            </div>
+            <div className="mt3">
+              <input onChange={this.onEmailChange} className='input' type='Email' placeholder="Email ID"/>
+            </div>
+            <div className="mv3">
+              <input onChange ={this.onPasswordChange} className='input' type='Password' placeholder="Create a Password" />
+            </div>
+              <input className="Registerbutton_Signup_page ph3 pv2 input-reset  grow pointer f6 dib" type="submit" value="Register"/>
+             <div className='Signin_area'>
+                <p className ="signinbutton pointer" onClick = {this.onSubmitRegister}>Sign in</p> 
+                <p className = 'Signinline'>If you already have account</p>   
+             </div>
           </div>
-          <div className="mt3">
-            <input className='input' type='Email' placeholder="Email ID"/>
-          </div>
-          <div className="mv3">
-            <input className='input' type='Password' placeholder="Create a Password" />
-          </div>
-            <input className="Registerbutton_Signup_page ph3 pv2 input-reset  grow pointer f6 dib" type="submit" value="Register"/>
-           <div className='Signin_area'>
-              <p className ="signinbutton pointer" onClick = {() => onRouteChange('SignIn')}>Sign in</p> 
-              <p className = 'Signinline'>If you already have account</p>   
-           </div>
+         </form>
         </div>
-       </form>
-      </div>
-      <footer className='center'>©SmartDetch, Inc.2021. We respect your Time!</footer>
-     </div>
-    </div>  
-    
-    );
+        <footer className='center'>©SmartDetch, Inc.2021. We respect your Time!</footer>
+       </div>
+      </div>  
+      
+      );    
+
+  }  
+  
+  
 }
 // class SignIn extends Component{
   

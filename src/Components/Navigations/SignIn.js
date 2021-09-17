@@ -111,18 +111,7 @@ class SignIn extends React.Component {
       );
   }  
 }
-// class SignIn extends Component{
-//   // constructor(){
-//   //   super(){
-//   //     this.state = {
 
-//   //     }
-//   //   }
-//   // }
-
-
-
-// }
 
 
 
