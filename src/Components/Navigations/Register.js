@@ -69,10 +69,10 @@ class Register extends React.Component {
       method: 'post',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({
-        Email: this.state.Email,
-        Password:this.state.Password,
-        FirstName:this.state.FirstName,
-        LastName:this.state.LastName
+        email: this.state.Email,
+        password:this.state.Password,
+        firstName:this.state.FirstName,
+        lastName:this.state.LastName
       })
     })
       .then(resp => resp.json())
@@ -105,9 +105,9 @@ class Register extends React.Component {
             <div className="mv3">
               <input onChange ={this.onPasswordChange} className='input' type='Password' placeholder="Create a Password" />
             </div>
-              <input className="Registerbutton_Signup_page ph3 pv2 input-reset  grow pointer f6 dib" type="submit" value="Register"/>
+              <input onClick = {this.onSubmitRegister} className="Registerbutton_Signup_page ph3 pv2 input-reset  grow pointer f6 dib" type="submit" value="Register"/>
              <div className='Signin_area'>
-                <p className ="signinbutton pointer" onClick = {this.onSubmitRegister}>Sign in</p> 
+                <p className ="signinbutton pointer" >Sign in</p> 
                 <p className = 'Signinline'>If you already have account</p>   
              </div>
           </div>
