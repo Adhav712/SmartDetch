@@ -35,8 +35,8 @@ const particlesOptions = {
   }
 
 class SignIn extends React.Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
       signInEmail: '',
       signInPassword: '',
@@ -62,7 +62,7 @@ class SignIn extends React.Component {
     })
       .then(resp => resp.json())
       .then(user => {
-        if(user === 'success') {
+        if(user) {
           this.props.loadUser(user);
           this.props.onRouteChange('home');
         }

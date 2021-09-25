@@ -38,30 +38,30 @@ const particlesOptions = {
 
 
 class Register extends React.Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
-      Email: '',
-      Password: '',
-      FirstName: '',
-      LastName: ''
+      email: '',
+      password: '',
+      firstname: '',
+      lastname: ''
     }
   }
 
   onFirstNameChange = (event) => {
-    this.setState({FirstName: event.target.value})
+    this.setState({firstName: event.target.value})
   }
 
   onLastNameChange = (event) => {
-    this.setState({LastName: event.target.value})
+    this.setState({lastName: event.target.value})
   }
 
   onEmailChange = (event) =>{
-    this.setState({Email: event.target.value})
+    this.setState({email: event.target.value})
   }
 
   onPasswordChange =(event) => {
-    this.setState({Password: event.target.value})
+    this.setState({password: event.target.value})
   }
 
   onSubmitRegister =() => {
@@ -69,18 +69,18 @@ class Register extends React.Component {
       method: 'post',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({
-        email: this.state.Email,
-        password:this.state.Password,
-        firstName:this.state.FirstName,
-        lastName:this.state.LastName
+        email: this.state.email,
+        password:this.state.password,
+        firstname:this.state.firstname,
+        lastname:this.state.lastname
       })
     })
       .then(resp => resp.json())
       .then(user => {
-        if(user){
+        if(user.id){
           console.log("Sending user data",user)
           this.props.loadUser(user);
-          this.props.onRouteChange('SignIn');
+          this.props.onRouteChange('home');
         }
       })
   }
@@ -107,7 +107,7 @@ class Register extends React.Component {
             </div>
               <input onClick = {this.onSubmitRegister} className="Registerbutton_Signup_page ph3 pv2 input-reset  grow pointer f6 dib" type="submit" value="Register"/>
              <div className='Signin_area'>
-                <p className ="signinbutton pointer" >Sign in</p> 
+                <p onClick= {() => this.props.onRouteChange('SignIn')} className ="signinbutton pointer" >Sign in</p> 
                 <p className = 'Signinline'>If you already have account</p>   
              </div>
           </div>

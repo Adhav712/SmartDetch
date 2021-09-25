@@ -71,8 +71,8 @@ class App extends Component {
       console.log('Saving User Data',data)
       this.setState({user: {
         id: data.id,
-        firstName: data.firstName,
-        lastName: data.lastName,
+        firstname: data.firstname,
+        lastname: data.lastname,
         email: data.email,
         entries: data.entries,
         joined: data.joined
@@ -135,9 +135,10 @@ displayFaceBox = (box) => {
       this.setState({isSignedIn: 'false'})
    }else if(route === 'home'){
       this.setState({isSignedIn: 'true'})
-   }else if(route === 'Register'){
-     this.setState({isSignedIn: 0})
    }
+   // else if(route === 'Register'){
+   //   this.setState({isSignedIn: 0})
+   // }
    this.setState({route: route});
  }
 
