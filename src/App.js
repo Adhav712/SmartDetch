@@ -58,8 +58,8 @@ class App extends Component {
       isSignedIn : 'false',
       user:{
         id: '',
-        firstName: '',
-        lastName: '',
+        firstname: '',
+        lastname: '',
         email: '',
         entries: 0,
         joined: ''
@@ -153,7 +153,7 @@ displayFaceBox = (box) => {
         ?<div>
             <Logo />
             <Rank 
-            name = {this.state.user.firstName} 
+            name = {this.state.user.firstname} 
             entries = {this.state.user.entries} 
             />
             <ImageLinkForm 

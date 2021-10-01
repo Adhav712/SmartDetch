@@ -49,11 +49,11 @@ class Register extends React.Component {
   }
 
   onFirstNameChange = (event) => {
-    this.setState({firstName: event.target.value})
+    this.setState({firstname: event.target.value})
   }
 
   onLastNameChange = (event) => {
-    this.setState({lastName: event.target.value})
+    this.setState({lastname: event.target.value})
   }
 
   onEmailChange = (event) =>{
@@ -77,10 +77,12 @@ class Register extends React.Component {
     })
       .then(resp => resp.json())
       .then(user => {
-        if(user.id){
+        if(user){
           console.log("Sending user data",user)
           this.props.loadUser(user);
           this.props.onRouteChange('home');
+        }else{
+          console.log('err');
         }
       })
   }
