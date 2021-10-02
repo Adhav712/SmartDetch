@@ -5,7 +5,6 @@ import Signout from "./Components/Navigations/Signout.js";
 import Logo from "./Components/Logo/Logo.js";
 import ImageLinkForm from "./Components/ImageLinkForm/ImageLinkForm.js";
 import Rank from "./Components/Rank/Rank.js";
-import Clarifai from 'clarifai';
 import FaceRecognition from './Components/FaceRecognition/FaceRecognition.js';
 import SignIn from './Components/Navigations/SignIn';
 import Register from './Components/Navigations/Register.js';
@@ -42,29 +41,27 @@ const particlesOptions = {
     },
 }
 
-const app = new Clarifai.App({
-  apiKey: 'f158f642d33c40f0bfc1612359c2fc6d'
- });
-
+const initialState =  
+  {
+    input : '',
+    imageUrl: '',
+    box: {},
+    route:'SignIn',
+    isSignedIn : 'false',
+    user:{
+      id: '',
+      firstname: '',
+      lastname: '',
+      email: '',
+      entries: 0,
+      joined: ''
+    }
+  }
 
 class App extends Component {
   constructor(){
     super();
-    this.state = {
-      input : '',
-      imageUrl: '',
-      box: {},
-      route:'SignIn',
-      isSignedIn : 'false',
-      user:{
-        id: '',
-        firstname: '',
-        lastname: '',
-        email: '',
-        entries: 0,
-        joined: ''
-      }
-    }
+    this.state = initialState;
   }
   
   loadUser= (data)=>{
@@ -105,10 +102,14 @@ displayFaceBox = (box) => {
 
  onbuttonSubmit =() => {
  this.setState({imageUrl: this.state.input});
-  app.models
-   .predict(
-      Clarifai.FACE_DETECT_MODEL,
-      this.state.input)
+    fetch('http://localhost:3000/imageurl',{
+      method: 'post',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        input: this.state.input
+      })
+    })
+    .then(resp => resp.json())
    .then(response => {
      if(response){
       fetch('http://localhost:3000/image',{
@@ -122,6 +123,7 @@ displayFaceBox = (box) => {
        .then(count => {
           this.setState(Object.assign(this.state.user, {entries: count}))
        })
+       .catch(console.log)
      }
    
     this.displayFaceBox(this.Facedetctionbox(response))
@@ -132,7 +134,7 @@ displayFaceBox = (box) => {
 
  onRouteChange = (route) => {
    if(route === 'Signout'){
-      this.setState({isSignedIn: 'false'})
+      this.setState(initialState)
    }else if(route === 'home'){
       this.setState({isSignedIn: 'true'})
    }
