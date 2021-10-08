@@ -1,94 +1,93 @@
-.backgroundcolor{
-    background-color: rgba(20, 56, 67,.8);  
+.backgroundcolor {
+  background-color: rgba(20, 56, 67, 0.8);
 }
 
-.image{
-    border-radius: 36px;
-    width: 200px;
-    height: 185px;
-    background-color: rgb(41, 38, 38);
-    margin-left: 0px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    border: #000000;
-    border-style: solid;
-    border-width:  2px;
-    
+.image {
+  border-radius: 36px;
+  width: 200px;
+  height: 185px;
+  background-color: rgb(41, 38, 38);
+  margin-left: 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: #000000;
+  border-style: solid;
+  border-width: 2px;
 }
 
-.sign_in{
+.sign_in {
   border-radius: 36px;
   border: #000000;
   border-style: solid;
-  border-width:  2px;  
+  border-width: 2px;
   padding: 50px;
-  background-color: rgba(20, 21, 21, .6);
-  min-width:500px;
-  box-shadow: 8px 5px 5px rgb(34, 34, 34,.7);
+  background-color: rgba(20, 21, 21, 0.6);
+  min-width: 500px;
+  box-shadow: 8px 5px 5px rgb(34, 34, 34, 0.7);
 }
 
-.input{
-    background-color: #CBCBCB;
-    border:none;
-    padding: 12px 15px;
-    margin: 8px 0;
-    width:100%; 
-    border-radius: 6px;   
+.input {
+  background-color: #cbcbcb;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+  border-radius: 6px;
 }
-.measure{
-    display: flex;
-    justify-content: center;
-}
-
-.Signinbutton{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 35%;
-    height: 50px;
-    border-radius: 8px;
-    background-color: rgb(112, 205, 110,.9);
-    margin-top: 35px;
+.measure {
+  display: flex;
+  justify-content: center;
 }
 
-.Registerline_area{
-    display: flex;
-    justify-content: flex-start;
-    padding-top: 20px;
+.Signinbutton {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+  height: 50px;
+  border-radius: 8px;
+  background-color: rgb(112, 205, 110, 0.9);
+  margin-top: 35px;
 }
 
-.Registerbutton{
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 25%;
-    height: 50%;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 15px;
-    border: #000000;
-    border-style: solid;
-    border-width:  2px;
-    color: rgba(0, 0, 0, 0.8);
-    font-size: 15px;
-    font-weight: 700;
-    font-family: Montserrat;
+.Registerline_area {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 20px;
 }
 
-p{
-    color: rgb(245, 236, 236,.9);
-    padding-left: 10px;
+.Registerbutton {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  height: 50%;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  border: #000000;
+  border-style: solid;
+  border-width: 2px;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 15px;
+  font-weight: 700;
+  font-family: Montserrat;
 }
 
-footer{
-    position: fixed;
-   left: 0;
-   bottom: 3%;
-   width: 100%;
-   /* background-color: red; */
-   color: white;
-   text-align: center;
-   font-family: Montserrat;
+p {
+  color: rgb(245, 236, 236, 0.9);
+  padding-left: 10px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 3%;
+  width: 100%;
+  /* background-color: red; */
+  color: white;
+  text-align: center;
+  font-family: Montserrat;
 }

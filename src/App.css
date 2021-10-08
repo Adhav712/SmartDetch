@@ -2,17 +2,17 @@
   text-align: center;
 }
 
-p{
+p {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
 }
 
-button{
+button {
   background-color: #363131;
 }
 
 .particles {
-  position:  fixed;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -20,7 +20,7 @@ button{
   z-index: -1;
 }
 
-.center{
+.center {
   display: flex;
   justify-content: center;
 }
