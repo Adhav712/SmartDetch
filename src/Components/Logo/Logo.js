@@ -12,7 +12,7 @@ const Logo = () => {
         style={{ height: 185, width: 200 }}
       >
         <div className="Tilt-inner">
-          <img className="images" alt="" src={SmartbrainlogoReworked1}></img>{" "}
+          <img className="images" alt="" src={SmartbrainlogoReworked1} />
         </div>
       </Tilt>
     </div>

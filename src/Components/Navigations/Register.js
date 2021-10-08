@@ -84,6 +84,7 @@ class Register extends React.Component {
         }
       });
   };
+
   render() {
     return (
       <div>
@@ -156,12 +157,5 @@ class Register extends React.Component {
     );
   }
 }
-// class SignIn extends Component{
-
-//   render(){
-
-//   };
-
-// }
 
 export default Register;
