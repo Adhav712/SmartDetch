@@ -8,6 +8,7 @@ import Rank from "./Components/Rank/Rank.js";
 import FaceRecognition from "./Components/FaceRecognition/FaceRecognition.js";
 import SignIn from "./Components/Navigations/SignIn";
 import Register from "./Components/Navigations/Register.js";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 
 const particlesOptions = {
   size: {
@@ -144,13 +145,13 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <BrowserRouter>
         <Particles className="particles" params={particlesOptions} />
         <Signout
           isSignedIn={this.state.isSignedIn}
           onRouteChange={this.onRouteChange}
         />
-        {this.state.route === "home" ? (
+        <Route path="/" exact>
           <div>
             <Logo />
             <Rank
@@ -166,15 +167,17 @@ class App extends Component {
               imageUrl={this.state.imageUrl}
             />
           </div>
-        ) : this.state.route === "SignIn" ? (
-          <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
-        ) : (
+        </Route>
+        <Route path="/register">
           <Register
             loadUser={this.loadUser}
             onRouteChange={this.onRouteChange}
           />
-        )}
-      </div>
+        </Route>
+        <Route path="/login">
+          <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+        </Route>
+      </BrowserRouter>
     );
   }
 }
